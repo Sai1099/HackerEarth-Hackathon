@@ -1,0 +1,15 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# Configs with sensitive information
+config/botConfig.json
+config/azureConfig.json
+
+package-lock.json

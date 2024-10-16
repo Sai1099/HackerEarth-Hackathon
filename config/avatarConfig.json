@@ -1,0 +1,8 @@
+{
+    "avatarModel": "/avatar/avatar.glb",
+    "gestureAnimations": {
+        "wave": "wave_animation",
+        "nod": "nod_animation",
+        "shake_head": "shake_head_animation"
+    }
+}

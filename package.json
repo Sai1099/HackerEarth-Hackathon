@@ -1,0 +1,19 @@
+{
+    "name": "asl-captioning-solution",
+    "version": "1.0.0",
+    "description": "A Microsoft Teams bot providing ASL interpretation and closed captioning.",
+    "main": "bot/index.js",
+    "scripts": {
+        "start": "node bot/index.js"
+    },
+    "dependencies": {
+        "botbuilder": "^4.14.0",
+        "document": "^0.4.7",
+        "dotenv": "^16.4.5",
+        "microsoft-cognitiveservices-speech-sdk": "^1.19.0",
+        "restify": "^11.1.0",
+        "three": "^0.137.0"
+    },
+    "author": "Chitturi Sai Murali",
+    "license": "MIT"
+}
