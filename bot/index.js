@@ -1,6 +1,7 @@
 const restify = require('restify');
 const { BotFrameworkAdapter } = require('botbuilder');
 const { ASLBot } = require('./bot');
+const { asyncHandler } = require('../../utils/asyncHandler');
 
 // Environment variables
 require('dotenv').config();
@@ -24,11 +25,28 @@ adapter.onTurnError = async (context, error) => {
 const server = restify.createServer();
 server.listen(process.env.port || 3978, () => {
     console.log(`\nBot is running on port ${server.url}`);
+    console.log(server.url);
+    
 });
 
 // Listen for incoming activities from Microsoft Teams
-server.post('/api/messages', (req, res) => {
-    adapter.processActivity(req, res, async (context) => {
-        await bot.run(context);
-    });
-});
+
+server.post('/api/messages',  (req,res,next)=>{
+    try {
+        adapter.processActivity(req, res, async (context) => {
+             await bot.run(context);
+    })}
+     catch (error) {
+        
+    }
+})
+// server.post('/api/messages', async(req, res,next) => {
+//     try {
+//         adapter.processActivity(req, res, async (context) => {
+//             await bot.run(context);
+//         });
+//         next();
+//     } catch (error) {
+//         throw new Error('Error in process activity')
+//     }
+// });
